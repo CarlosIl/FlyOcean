@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyOcean</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.jpg">
+    <link rel="stylesheet" href="estiloVuelos.css"/>
+</head>
+<body>
+    <header>
+        <div>
+            <ul id="bar">
+                <li class="">
+                    <picture>
+                        <img src="imagenes/logo.png" alt="logo">
+                    </picture>
+                </li>
+                <li><a href="#tableVuelos">Vuelos disponibles</a></li>
+                <li><a href="#formPasajeros">Reservar vuelo</a></li>
+                <li><a href="#checkin_imagen">Viaja</a></li>
+                <li><a href="#autor">Sobre nosotros</a></li>
+            </ul>
+            
+            <!--<table border="solid" id="indice">
+                <tr>
+                    <td>
+                        <picture>
+                            <img src="imagenes/logo.jpg" alt="logo">
+                        </picture>
+                    </td>
+                    <td>Vuelos disponibles</td>
+                    <td>Viaja</td>
+                    <td>Vuelos recomendados</td>
+                    <td>Reservar vuelo</td>
+                    <td>COVID-19</td>
+                    <td>Sobre nosotros</td>
+                </tr>
+            </table>-->
+        </div>
+    </header>
+    <aside id="banner_der">
+    </aside>
+    <aside id="banner_izqu">
+    </aside>
+    <section id="section_video">
+        <iframe id="video"
+        src="https://www.youtube.com/embed/JS6w-DXiZpk?autoplay=1&mute=1&loop=1&controls=0">
+        </iframe> 
+    </section>
+    <section id="tableVuelos">
+        <h1>Vuelos disponibles</h1>           
+        <table border="solid" id="tablaVuelos">
+        </table>
+    </section>
+    
+    <section id="formPasajeros">
+        <h1>Reservar vuelo</h1>
+        <div>
+            <fieldset>
+                <legend>Añadir nuevo pasajero</legend>
+                <label for="dni">DNI:</label><br>
+                <input type="text" id="dni" name="dni" placeholder="12345678-A" pattern="[0-9]{8}-[A-Z]{1}"><br>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion"><br>
+                <label for="tel">Teléfono:</label><br>
+                <input type="text" id="tel" name="tel" pattern="[0-9]{9}"><br>
+                <label for="numVuelo">Número del vuelo:</label><br>
+                <select id="numVuelo" name="numVuelo">
+                    <option value="IB-3410">IB-3410</option>
+                    <option value="AA-0025">AA-0025</option>
+                    <option value="MH16">MH16</option>
+                </select>
+                <button onclick="AddPasajero()">Añadir</button>
+            </fieldset>
+        </div>
+    </section>
+    <section id="tablePasajeros">
+        <h1>Lista de pasajeros</h1>
+        <div>
+            <table border="solid" id="tablaPasajeros">
+            </table>
+        </div>
+    </section>
+
+    <section id="checkin_imagen">
+            <h1 class="viaja">Viaja</h1>
+            <h3 class="viaje">Check-in online</h3>
+            <div>
+                <picture>
+                    <img src="imagenes/checkin.jpg" alt="checkin">
+                </picture>                   
+            </div>
+    </section>
+    <section id="checkin">
+            <div>
+                <h5>Check-in online</h5>
+                <p>
+                    Realiza el Check-in online para obtener tu tarjeta de embarque antes de llegar al aeropuerto y descárgatela en el móvil, siempre que sea posible.<br>
+                    Check-in online
+                </p>
+            </div>
+    </section>
+    <section id="salud">
+            <div>
+                <h5>Declaración de salud</h5>
+                <p>
+                    Las autoridades requieren que aceptes una Declaración de Salud para confirmar que: no manifiestas ningún síntoma, no has sido diagnosticado/a con COVID-19, no has estado en contacto directo con una persona que lo padeciera, ni estás en periodo de cuarentena obligatoria. Podrás acceder al formulario durante el Check-in online o en el mismo aeropuerto. Recuerda, si presentas síntomas, no acudas al aeropuerto y contacta con nosotros.
+                </p>
+            </div>
+    </section>
+    <section id="control_sanitario">
+            <div>
+                <h5>Formulario de Control Sanitario</h5>
+                <p>
+                    Para poder entrar en España desde el extranjero, deberás presentar uno de estos documentos, excepto los menores de 12 años o para viajes en tránsito internacional:
+                </p>
+                <ul>
+                    <li>Un Certificado COVID Digital de la UE o equivalente UE de vacunación frente a COVID-19 o un certificado negativo de una prueba diagnóstica de infección activa o un certificado de Recuperación tras haber pasado esta enfermedad.</li>
+                    <li>QR SpTH: si NO dispones del Certificado COVID Digital de la UE o equivalente UE, deberás cumplimentar el Formulario de Control Sanitario, a través de la página www.spth.gob.es, o bien descargándote la app en el móvil.</li>
+                </ul>
+            </div>
+    </section>
+
+    <footer id="autor">
+        <p>Author: Carlos Ildefonso García Gil<br>
+        <a href="mailto:carlosi.gargil@educa.jcyl.es">carlosi.gargil@educa.jcyl.es</a></p>
+    </footer>
+
+    
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                ShowVuelos(this);
+            }
+        };
+        xhttp.open("GET", "vuelos.xml", true);
+        xhttp.send();
+        
+        function ShowVuelos(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table="<tr><th>Número del vuelo</th><th>Origen</th><th>Destino</th><th>Hora de salida</th><th>Modelo del avión</th><th>Número de plazas para turista</th><th>Número de plazas para ejecutivos</th></tr>";
+            var x = xmlDoc.getElementsByTagName("vuelo");
+            for (i = 0; i <x.length; i++) {
+                table += "<tr><td>" +
+                x[i].getAttribute('Num_vuelo') +
+                "</td><td>" +
+                x[i].getElementsByTagName("origen")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("destino")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("hora_salida")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("modelo")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("num_plazas_turista")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("num_plazas_business")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("tablaVuelos").innerHTML = table;
+        }
+
+        function AddPasajero(){
+            pasajeros = "<tr><th>DNI</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Número de vuelos</th></tr>";
+            sessionStorage.value += "<tr><td>" + 
+            document.getElementById("dni").value + 
+            "</td><td>" + 
+            document.getElementById("nombre").value + 
+            "</td><td>" + 
+            document.getElementById("direccion").value +
+            "</td><td>" + 
+            document.getElementById("tel").value +
+            "</td><td>" + 
+            document.getElementById("numVuelo").value +
+            "</td></tr>";
+            document.getElementById("tablaPasajeros").innerHTML = pasajeros+sessionStorage.value;
+        }
+    </script>
+
+</body>
+</html>

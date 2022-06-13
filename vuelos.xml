@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <vuelos>
+        <vuelo Num_vuelo="IB-3410">
+            <origen>Valladolid</origen>
+            <destino>Ibiza</destino>
+            <hora_salida>08:00</hora_salida>
+            <modelo>Boeing 747</modelo>
+            <num_plazas_turista>375</num_plazas_turista>
+            <num_plazas_business>100</num_plazas_business>
+        </vuelo>
+        <vuelo Num_vuelo="AA-0025">
+            <origen>Valladolid</origen>
+            <destino>A Coruña</destino>
+            <hora_salida>10:00</hora_salida>
+            <modelo>Airbus A340</modelo>
+            <num_plazas_turista>300</num_plazas_turista>
+            <num_plazas_business>75</num_plazas_business>
+        </vuelo>
+        <vuelo Num_vuelo="MH16">
+            <origen>Valladolid</origen>
+            <destino>Fuenteventura</destino>
+            <hora_salida>16:00</hora_salida>
+            <modelo>McDonnell Douglas MD-80</modelo>
+            <num_plazas_turista>325</num_plazas_turista>
+            <num_plazas_business>100</num_plazas_business>
+        </vuelo>
+    </vuelos>

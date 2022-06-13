@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <pasajeros>
+        <pasajero DNI="15994606S">
+            <nombre>Iker Heredia</nombre>
+            <direccion>Estrada Catalunya, 8</direccion>
+            <telefono>674780432</telefono>
+            <vuelo>IB-3410</vuelo>
+        </pasajero>
+        <pasajero DNI="15197007X">
+            <nombre>Almudena Trujillo</nombre>
+            <direccion>Polígono Madrid, 31</direccion>
+            <telefono>668846364</telefono>
+            <vuelo>IB-3410</vuelo>
+        </pasajero>
+        <pasajero DNI="93452094N">
+            <nombre>Maria Gloria Alvarez</nombre>
+            <direccion>Rúa Pedralbes, 84</direccion>
+            <telefono>708975488</telefono>
+            <vuelo>MH16</vuelo>
+        </pasajero>
+        <pasajero DNI="38831673Z">
+            <nombre>Rita Tena</nombre>
+            <direccion>Estrada Iglesia, 36</direccion>
+            <telefono>729299955</telefono>
+            <vuelo>IB-3410</vuelo>
+        </pasajero>
+    </pasajeros>
