@@ -1,31 +1,25 @@
-@media only screen and (max-width: 790px){
+@media only screen and (max-width: 792px){
     body {
         background-color: silver;
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: 150px 1fr 150px;
-        grid-gap: 1em;
     }
 
     header {
         text-align: center;
-        align-content: center;
+        display: block;
         position: sticky;
         top: 0;
-        grid-column: 2 / 3;
     }
 
     #bar {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        width: 300px;
         overflow: hidden;
         background-color: #333;
     }
 
     li {
-        float: left;
+        float: none;
     }
 
     li a {
@@ -42,7 +36,6 @@
 
     #section_video {
         text-align: center;
-        grid-column: 2 / 3;
         
     }
 
@@ -53,8 +46,8 @@
 
     #tableVuelos {
         text-align: center;
-        grid-column: 2 / 3;
         margin-top: 150px;
+        width: 100%;
     }
 
     #tablaVuelos {
@@ -82,7 +75,6 @@
 
     #formPasajeros {
         text-align: center;
-        grid-column: 2 / 3;
         margin-top: 300px;
     }
 
@@ -118,7 +110,6 @@
 
     #tablePasajeros {
         text-align: center;
-        grid-column: 2 / 3;
     }
 
     #tablaPasajeros {
@@ -144,33 +135,33 @@
         color: white;
     }
 
-    #checkin_imagen {
-        grid-column: 2 / 3;
+    #viaje {
         text-align: center;
+    }
+
+    #checkin_imagen {
+        width: 100%;
     }
 
     #checkin {
         border-style: dashed;
-        grid-column: 2 / 3;
     }
 
     #salud {
         border-style: solid;
-        grid-column: 2 / 3;
     }
 
     #control_sanitario {
         border-style: double;
-        grid-column: 2 / 3;
     }
 
     footer {
-        grid-column: 1 / 4;
         background-color: #333;
     }
+
 }
 
-@media only screen and (min-width: 790px) and (max-width: 1216px) {
+@media only screen and (min-width: 792px) and (max-width: 1216px) {
     body {
         background-color: silver;
         display: grid;
@@ -313,7 +304,7 @@
         color: white;
     }
 
-    #checkin_imagen {
+    #viaje {
         grid-column: 2 / 3;
         text-align: center;
     }
@@ -490,7 +481,7 @@
         color: white;
     }
 
-    #checkin_imagen {
+    #viaje {
         grid-column: 2 / 3;
         text-align: center;
     }
