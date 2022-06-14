@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <vuelos>
+    <vuelos xmlns:xs="http://www.w3-org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="./vuelosXSD.xml">
         <vuelo Num_vuelo="IB-3410">
             <origen>Valladolid</origen>
             <destino>Ibiza</destino>
