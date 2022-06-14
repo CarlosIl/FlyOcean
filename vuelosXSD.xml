@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="vuelos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vuelo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="origen" type="xs:string"/>
+                            <xs:element name="destino" type="xs:string"/>
+                            <xs:element name="hora_salida" type="xs:string"/>
+                            <xs:element name="modelo" type="xs:string"/>
+                            <xs:element name="num_plazas_turista" type="xs:integer"/>
+                            <xs:element name="num_plazas_business" type="xs:integer"/>
+                        </xs:sequence>
+                        <xs:attribute name="Num_vuelo" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
